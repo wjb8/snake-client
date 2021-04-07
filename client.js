@@ -13,6 +13,8 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('Connection established!');
     conn.write('Name: JB');
+    setTimeout(() => conn.write('Move: down'), 50);
+    setInterval(() => conn.write('Move: left'), 100);
   });
 
   conn.on('data', (data) => console.log('you ded cuz u idled'));
